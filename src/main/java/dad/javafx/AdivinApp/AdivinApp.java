@@ -48,27 +48,26 @@ public class AdivinApp extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+		
 	}
 
 	private void onCheckNumberAction(ActionEvent a) {
 
 		try {
 			int numberU = Integer.parseInt(numeroText.getText());
-
+			counter++;
+			
 			if (number > numberU) {
-				counter++;
 				Alert alertF = new Alert(AlertType.WARNING);
 				alertF.setHeaderText("¡Has fallado!");
 				alertF.setContentText("El número a adivinar es mayor que " + numberU + ".\n\nVuelve a intentarlo.");
 				alertF.showAndWait();
 			} else if (number < numberU) {
-				counter++;
 				Alert alertF = new Alert(AlertType.WARNING);
 				alertF.setHeaderText("¡Has fallado!");
 				alertF.setContentText("El número a adivinar es menor que " + numberU + ".\n\nVuelve a intentarlo.");
 				alertF.showAndWait();
 			} else {
-				counter++;
 				Alert alertW = new Alert(AlertType.INFORMATION);
 				alertW.setHeaderText("¡Has ganado!");
 				alertW.setContentText("Sólo has necesitado " + counter + " intentos.\n\nVuelve a jugar y hazlo mejor.");
